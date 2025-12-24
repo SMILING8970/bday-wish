@@ -7,32 +7,62 @@
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       height: 100vh;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
-      text-align: center;
     }
     .card {
       background: white;
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
     }
     h1 {
       color: #ff4b5c;
-      font-size: 40px;
     }
-    p {
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ff4b5c;
+      color: white;
+    }
+    button:hover {
+      background: #e63a4a;
+    }
+    #surprise {
+      display: none;
+      margin-top: 20px;
       font-size: 18px;
     }
   </style>
 </head>
 <body>
+
   <div class="card">
     <h1>🎂 Happy Birthday! 🎉</h1>
-    <p>May your day be filled with cake, smiles, and zero homework.</p>
-    <p>– From Me 💖</p>
+    <p>Click the button. Trust the process.</p>
+
+    <button onclick="showSurprise()">Click for surprise 🎁</button>
+
+    <div id="surprise">
+      🎈 You are officially one year cooler.  
+      <br>Have the best day ever 💖
+    </div>
   </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
