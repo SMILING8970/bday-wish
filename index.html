@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>!! WELCOME HERE BB !!</title>
+
   <style>
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -12,7 +13,9 @@
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
+
     .card {
       background: white;
       padding: 40px;
@@ -20,13 +23,16 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       text-align: center;
       max-width: 400px;
+      z-index: 2;
     }
+
     h1 {
       color: #ff4b5c;
     }
+
     button {
       margin-top: 20px;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       border: none;
       border-radius: 8px;
@@ -34,35 +40,26 @@
       background: #ff4b5c;
       color: white;
     }
+
     button:hover {
       background: #e63a4a;
     }
-    #surprise {
-      display: none;
-      margin-top: 20px;
-      font-size: 18px;
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: fall 3s linear forwards;
     }
-  </style>
-</head>
-<body>
 
-  <div class="card">
-    <h1>!! WELCOME HERE BB !!</h1>
-    <p>can you click down on the button? 😙</p>
-
-    <button onclick="showSurprise()">Guess WHAT!? 🙀</button>
-
-    <div id="surprise">
-      🎈 You are officially my 19 yr old man💪🏼!! 🤭. BUT don't worry!! you'll always be my baby!!  
-      <br>Enjoy your day my love!!! 💖
-    </div>
-  </div>
-
-  <script>
-    function showSurprise() {
-      document.getElementById("surprise").style.display = "block";
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
     }
-  </script>
 
-</body>
-</html>
+    /* Popup modal */
+    .modal {
+      position
