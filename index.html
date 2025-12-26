@@ -102,6 +102,13 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    .popup-video {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
   </style>
 </head>
 
@@ -156,7 +163,58 @@
         YOU WILL ENJOY YOUR BDAY. OKAY. HMPH.
       </p>
 
-      <button onclick="closeAll()">I TAKE IT BACK 😭</button>
+      <button onclick="retry()">I TAKE IT BACK 😭</button>
+
+    </div>
+  </div>
+
+  <div class="modal" id="popup-retry">
+    <div class="modal-content">
+
+      <img src="retry.jpg" class="popup-img">
+
+      <p class="popup-text">
+        Think Again. Okay.🥰<br>
+        Think....<br>
+        Final answer?
+      </p>
+
+      <button onclick="finalYes()">YES 😌</button>
+      <button onclick="finalMaybe()">MAYBE 🐼</button>
+
+    </div>
+  </div>
+
+  <div class="modal" id="popup-final-yes">
+    <div class="modal-content">
+
+      <img src="final_yes.jpg" class="popup-img">
+
+      <p class="popup-text">
+        Good choice ml, my bb😌💖<br>
+        You're the bestest!!<br>
+        Happy Birthday again, my love 🎂 *puchi*
+      </p>
+
+      <button onclick="closeAll()">YASSS 🥰</button>
+
+    </div>
+  </div>
+
+  <div class="modal" id="popup-final-maybe">
+    <div class="modal-content">
+
+      <video class="popup-video" autoplay loop muted playsinline>
+        <source src="maybe.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      <p class="popup-text">
+        MAYBE??? 😭<br>
+        you better enjoy.
+      </p>
+
+      <button onclick="closeAll()">HMPH OKAY. 🐼</button>
 
     </div>
   </div>
@@ -198,6 +256,22 @@
       setTimeout(() => confetti.remove(), 3000);
     }
   }
+
+  function retry() {
+    closeAll();
+    document.getElementById("popup-retry").style.display = "flex";
+  }
+
+  function finalYes() {
+    closeAll();
+    document.getElementById("popup-final-yes").style.display = "flex";
+  }
+
+  function finalMaybe() {
+    closeAll();
+    document.getElementById("popup-final-maybe").style.display = "flex";
+  }
+
 </script>
 
 
