@@ -114,7 +114,7 @@
   </div>
 
   <!-- Popup -->
-  <div class="modal" id="popup">
+  <div class="modal" id="popup-choice">
     <div class="modal-content">
       <img src="uhm.jpg" alt="HAPPY BIRTHDAY BIBU 💖" class="popup-img">
       
@@ -125,34 +125,81 @@
       </p>
     
       <br><br>
-      <button onclick="closePopup()">OKAYYY 🥰</button>
+      <button onclick="showYes()">YES i will😌</button>
+      <button onclick="showNo()">NO 😜 </button>
     </div>
   </div>
 
-  <script>
-    function celebrate() {
-      // show popup
-      document.getElementById("popup").style.display = "flex";
+  <div class="modal" id="popup-yes">
+    <div class="modal-content">
 
-      // confetti burst
-      for (let i = 0; i < 90; i++) {
-        const confetti = document.createElement("div");
-        confetti.className = "confetti";
-        confetti.style.left = Math.random() * 100 + "vw";
-        confetti.style.backgroundColor =
-          "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        confetti.style.animationDuration =
-          (Math.random() * 2 + 2) + "s";
+      <img src="yes.jpg" class="popup-img">
 
-        document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 3000);
-      }
+      <p class="popup-text">
+        Correct. You Should.😽💖<br>
+        I love you more than you think. bb. <br>
+        Happy Birthday again, my love 🎂
+      </p>
+
+      <button onclick="closeAll()">YAYYY 🥰</button>
+
+    </div>
+  </div>
+
+  <div class="modal" id="popup-no">
+    <div class="modal-content">
+
+      <img src="no.jpg" class="popup-img">
+
+      <p class="popup-text">
+        Wrong. How Dare You. 😾<br>
+        YOU WILL ENJOY YOUR BDAY. OKAY. HMPH.
+      </p>
+
+      <button onclick="closeAll()">I TAKE IT BACK 😭</button>
+
+    </div>
+  </div>
+
+ <script>
+  function celebrate() {
+    // show first popup (YES / NO)
+    document.getElementById("popup-choice").style.display = "flex";
+    launchConfetti();
+  }
+
+  function showYes() {
+    closeAll();
+    document.getElementById("popup-yes").style.display = "flex";
+  }
+
+  function showNo() {
+    closeAll();
+    document.getElementById("popup-no").style.display = "flex";
+  }
+
+  function closeAll() {
+    document.querySelectorAll(".modal").forEach(popup => {
+      popup.style.display = "none";
+    });
+  }
+
+  function launchConfetti() {
+    for (let i = 0; i < 90; i++) {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor =
+        "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+      confetti.style.animationDuration =
+        (Math.random() * 2 + 2) + "s";
+
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 3000);
     }
+  }
+</script>
 
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
 
 </body>
 </html>
